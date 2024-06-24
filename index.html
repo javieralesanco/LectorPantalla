@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector pantalla</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            gap: 10px;
+            height: 100vh;
+            width: 100vw;
+            font-size: 40px;
+            background-color: #FFF;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Ancho: <span id="ancho"></span>px</p>
+    <p>Alto: <span id="alto"></span>px</p>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            actualizarPantalla();
+            document.body.addEventListener('click',()=>{
+                actualizarPantalla();
+            })
+        })
+        function actualizarPantalla() {
+            document.getElementById('ancho').textContent = document.body.offsetWidth;
+            document.getElementById('alto').textContent = document.body.offsetHeight;
+        }
+    </script>
+</body>
+
+</html>
