@@ -28,7 +28,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             actualizarPantalla();
-            document.body.addEventListener('click',()=>{
+            document.body.addEventListener('click',(event)=>{
+                event.target.requestFullscreen();
                 actualizarPantalla();
             })
         })
