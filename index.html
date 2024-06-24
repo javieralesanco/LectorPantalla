@@ -19,6 +19,9 @@
             background-color: #FFF;
             color: #000;
         }
+        :not(:root):fullscreen::backdrop{
+            background: #FFF;
+        }
     </style>
 </head>
 
@@ -29,7 +32,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             actualizarPantalla();
             document.body.addEventListener('click',(event)=>{
-                event.target.requestFullscreen();
+                document.body.requestFullscreen();
                 actualizarPantalla();
             })
         })
